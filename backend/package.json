@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ULL-ESIT-DSI-1920/dsi-p8-docker-alu0100944723/issues"
   },
-  "homepage": "https://github.com/ULL-ESIT-DSI-1920/dsi-p8-docker-alu0100944723#readme"
+  "homepage": "https://github.com/ULL-ESIT-DSI-1920/dsi-p8-docker-alu0100944723#readme",
+  "dependencies": {
+      "express": "^4.17.1"
+  }
 }

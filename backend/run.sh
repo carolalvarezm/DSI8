@@ -1,2 +1,2 @@
-docker build . -t app:1.0
-docker run -it app:1.0
+docker build . -t backend:1.0
+docker run -it backend:1.0
