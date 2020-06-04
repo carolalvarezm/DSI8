@@ -29,7 +29,7 @@ $ sudo apt-get update
 $ sudo apt-get install docker-ce \
     docker-ce-cli \
     containerd.io
-```s
+```
 * Añadimos nuestro usuario al grupo docker:
 ```bash
 $ sudo usermod -aG docker $USER
@@ -86,6 +86,7 @@ app.get("/api/", (req, res) => {
 app.listen(PORT, HOST);
 console.log(`Running NODE on http://localhost:${PORT} (private)`);
 ```
+![Run.sh]()
 ![Aplicación node]()
 ## Dockerizando la aplicación node
 Para dockerizar la aplicación node lo primero que hacemos es hacer en nuestra carpeta de backend un Dockerfile, el mio quedaría así:
@@ -238,11 +239,7 @@ CMD ["nginx", "-g", "daemon off;"]
 * El fichero de configuración del paso anterior contiene lo siguiente:
 ```
 server {
-listen 8081;
-server_name localhost;
-charset utf8;
-access_log /var/log/nginx/access.log main;
-location / {
+listen 8081;docker-compose up --build
 root /usr/share/nginx/html;
 index index.html index.htm;
 }
@@ -275,6 +272,7 @@ proxy_pass http://node:8081/;
     $ docker-compose --version
     
  ```
+ ![docker-compose version]()
  * Después tenemos que definir un archivo *docker-compose.yml*:
  ```yml
  version: '3.7'
