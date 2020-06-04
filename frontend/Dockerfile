@@ -1,8 +1,8 @@
-FROM node:12.2.0 as build
+FROM node:12.12.0-buster-slim as build
 WORKDIR /app
 COPY package.json .
-COPY src/ src/
 RUN npm install -g parcel-bundler
+COPY src/ src/
 RUN parcel build src/index.html -d dist
 
 FROM nginx:1.17.6

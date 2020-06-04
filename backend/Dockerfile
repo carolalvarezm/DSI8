@@ -1,4 +1,5 @@
-FROM node:12.2.0
+FROM node:12.12.0-buster-slim
+WORKDIR /app
 COPY data.json .
 COPY package.json .
 COPY server.js .
