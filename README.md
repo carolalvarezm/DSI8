@@ -35,7 +35,8 @@ $ sudo apt-get install docker-ce \
 $ sudo usermod -aG docker $USER
 ```
 * Comprobamos la versión para ver si se ha instalado correctamente:
-![Version del Docker]()
+
+![Version del Docker](https://github.com/ULL-ESIT-DSI-1920/dsi-p8-docker-alu0100944723/blob/master/Capturas_Readme/docker_version.png)
 
 ## Creando la aplicación de Node
 ### server.js
@@ -86,8 +87,8 @@ app.get("/api/", (req, res) => {
 app.listen(PORT, HOST);
 console.log(`Running NODE on http://localhost:${PORT} (private)`);
 ```
-![Run.sh]()
-![Aplicación node]()
+
+![Aplicación node](https://github.com/ULL-ESIT-DSI-1920/dsi-p8-docker-alu0100944723/blob/master/Capturas_Readme/node.gif)
 ## Dockerizando la aplicación node
 Para dockerizar la aplicación node lo primero que hacemos es hacer en nuestra carpeta de backend un Dockerfile, el mio quedaría así:
 ```dockerfile
@@ -104,9 +105,8 @@ CMD ["node", "server.js"]
 * A continuación copiamos los archivos necesarios a ese directorio.
 * Después hacemos un *npm install* para instalar todas las dependencias necesarias.
 * Finalmente usamos como comando el node server.js para correr nuestra aplicación.
- 
-![Run.sh]()
-![/api]()
+
+![Run.sh](https://github.com/ULL-ESIT-DSI-1920/dsi-p8-docker-alu0100944723/blob/master/Capturas_Readme/node_runsh.png)
 
 ## Creando la web frontend
 * Para el fronend utilizaremos parcel para construir los archivos de producción y después utilizaremos nginx para desplegarla.
@@ -272,7 +272,7 @@ proxy_pass http://node:8081/;
     $ docker-compose --version
     
  ```
- ![docker-compose version]()
+ ![docker-compose version](https://github.com/ULL-ESIT-DSI-1920/dsi-p8-docker-alu0100944723/blob/master/Capturas_Readme/docker_compose_version.png)
  * Después tenemos que definir un archivo *docker-compose.yml*:
  ```yml
  version: '3.7'
@@ -311,5 +311,5 @@ networks:
 ```bash
 $docker-compose up --build
 ```
-![Docker-compose up]()
-![Resultado final]()
+![Docker-compose up](https://github.com/ULL-ESIT-DSI-1920/dsi-p8-docker-alu0100944723/blob/master/Capturas_Readme/runsh.png)
+![Resultado final](https://github.com/ULL-ESIT-DSI-1920/dsi-p8-docker-alu0100944723/blob/master/Capturas_Readme/resultado.gif)
